@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-    <title>Yoga Srinivasan | Cinematic Director, Video Editor & Photographer</title>
+    <title>Yoga Srinivasan | Video Editor & Cinematic Director</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
@@ -80,7 +80,7 @@
         }
 
         .section-title {
-            font-size: 2.8rem;
+            font-size: 2.5rem;
             font-weight: 800;
             margin-bottom: 2rem;
             background: linear-gradient(135deg, #FFFFFF, var(--gold), var(--orange));
@@ -92,7 +92,7 @@
         
         .section-subtitle {
             color: var(--gold);
-            font-size: 0.85rem;
+            font-size: 0.8rem;
             letter-spacing: 4px;
             text-transform: uppercase;
             margin-bottom: 0.5rem;
@@ -112,20 +112,8 @@
             flex: 1.2;
         }
         
-        .hero-badge {
-            background: rgba(255, 217, 102, 0.12);
-            padding: 0.5rem 1.2rem;
-            border-radius: 40px;
-            font-size: 0.8rem;
-            font-weight: 600;
-            color: var(--gold);
-            display: inline-block;
-            margin-bottom: 1.5rem;
-            backdrop-filter: blur(10px);
-        }
-        
         .hero-content h1 {
-            font-size: 4.5rem;
+            font-size: 4rem;
             font-weight: 900;
             margin-bottom: 0.5rem;
             line-height: 1.1;
@@ -138,17 +126,31 @@
             color: transparent;
         }
         
+        .professional-badge {
+            background: rgba(255, 217, 102, 0.15);
+            padding: 0.3rem 1rem;
+            border-radius: 40px;
+            font-size: 0.7rem;
+            font-weight: 600;
+            color: var(--gold);
+            display: inline-block;
+            margin: 0.5rem 0 1rem 0;
+            letter-spacing: 1px;
+        }
+        
         .hero-tagline {
-            font-size: 1.2rem;
+            font-size: 1rem;
             color: #94a3b8;
-            margin-bottom: 1.5rem;
+            margin-bottom: 1rem;
+            line-height: 1.6;
         }
         
         .hero-description {
             color: #94a3b8;
             max-width: 500px;
-            margin-bottom: 2rem;
+            margin-bottom: 1.5rem;
             line-height: 1.6;
+            font-size: 0.9rem;
         }
         
         .hero-stats {
@@ -162,38 +164,83 @@
         }
         
         .stat-number {
-            font-size: 2rem;
+            font-size: 1.8rem;
             font-weight: 800;
             color: var(--gold);
         }
         
         .stat-label {
-            font-size: 0.75rem;
+            font-size: 0.7rem;
             color: #94a3b8;
         }
         
-        .hero-image {
-            flex: 0.8;
+        .hero-right {
+            flex: 0.9;
             text-align: center;
         }
         
         .hero-image img {
-            width: 300px;
-            height: 300px;
+            width: 260px;
+            height: 260px;
             border-radius: 50%;
             object-fit: cover;
             border: 4px solid var(--gold);
             box-shadow: 0 0 50px rgba(255, 217, 102, 0.3);
-            animation: pulseGlow 3s infinite;
+            margin-bottom: 1.5rem;
         }
         
-        @keyframes pulseGlow {
-            0% { box-shadow: 0 0 0 0 rgba(255, 217, 102, 0.4); }
-            70% { box-shadow: 0 0 0 20px rgba(255, 217, 102, 0); }
-            100% { box-shadow: 0 0 0 0 rgba(255, 217, 102, 0); }
+        /* Industry Boxes - Empty Space Near Photo Filled */
+        .industry-boxes {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 0.8rem;
+            margin-top: 1rem;
+        }
+        
+        .industry-item {
+            background: rgba(255, 217, 102, 0.08);
+            border: 1px solid rgba(255, 217, 102, 0.2);
+            border-radius: 12px;
+            padding: 0.6rem 0.4rem;
+            text-align: center;
+            transition: 0.3s;
+        }
+        
+        .industry-item:hover {
+            background: rgba(255, 217, 102, 0.15);
+            border-color: var(--gold);
+            transform: translateY(-2px);
+        }
+        
+        .industry-item i {
+            font-size: 1.2rem;
+            color: var(--gold);
+            margin-bottom: 0.3rem;
+            display: block;
+        }
+        
+        .industry-item span {
+            font-size: 0.65rem;
+            color: #cbd5e6;
         }
 
-        /* ========== REELS SECTION - 4 VERTICAL COLUMNS ========== */
+        /* Portfolio Title Big */
+        .portfolio-big-title {
+            text-align: center;
+            margin: 2rem 0;
+        }
+        
+        .portfolio-big-title h2 {
+            font-size: 3.5rem;
+            font-weight: 900;
+            background: linear-gradient(135deg, var(--gold), var(--orange));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            letter-spacing: 5px;
+        }
+
+        /* ========== REELS SECTION - ALL SAME COLOR SAME LINE ========== */
         .reels-heading {
             text-align: center;
             margin-bottom: 3rem;
@@ -219,29 +266,27 @@
             border-color: var(--gold);
         }
         
+        /* All Column Headers Same Color */
         .column-header {
             text-align: center;
-            padding: 1rem;
+            padding: 0.8rem;
             border-radius: 16px;
             margin-bottom: 1rem;
+            background: linear-gradient(135deg, rgba(255, 217, 102, 0.15), rgba(255, 136, 0, 0.1));
+            border-bottom: 2px solid var(--gold);
         }
         
         .column-header h3 {
-            font-size: 1rem;
+            font-size: 0.9rem;
             font-weight: 700;
             color: var(--gold);
         }
         
         .column-header p {
-            font-size: 0.7rem;
+            font-size: 0.6rem;
             color: #94a3b8;
-            margin-top: 0.3rem;
+            margin-top: 0.2rem;
         }
-        
-        .header-faceprep { background: linear-gradient(135deg, #1a472a, #0a2a1a); border-bottom: 2px solid #00ff88; }
-        .header-shanmugha { background: linear-gradient(135deg, #1a2a4a, #0a1a3a); border-bottom: 2px solid var(--gold); }
-        .header-fashion { background: linear-gradient(135deg, #4a1a2a, #3a0a1a); border-bottom: 2px solid #ff6680; }
-        .header-other { background: linear-gradient(135deg, #2a2a4a, #1a1a3a); border-bottom: 2px solid #aa88ff; }
         
         .reel-item {
             margin-bottom: 1rem;
@@ -272,21 +317,13 @@
             pointer-events: none;
         }
         
-        /* For MP4 videos */
-        .reel-video video {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            pointer-events: none;
-        }
-        
         .play-overlay {
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(0,0,0,0.5);
+            background: rgba(0, 0, 0, 0.5);
             display: flex;
             align-items: center;
             justify-content: center;
@@ -296,108 +333,23 @@
         .play-overlay i {
             font-size: 3rem;
             color: var(--gold);
-            text-shadow: 0 0 10px rgba(0,0,0,0.5);
-            transition: transform 0.2s;
         }
         
         .reel-item:hover .play-overlay {
-            background: rgba(0,0,0,0.3);
-        }
-        
-        .reel-item:hover .play-overlay i {
-            transform: scale(1.1);
+            background: rgba(0, 0, 0, 0.3);
         }
         
         .reel-title {
-            padding: 0.6rem;
-            font-size: 0.7rem;
+            padding: 0.5rem;
+            font-size: 0.65rem;
             text-align: center;
             color: #cbd5e6;
-            font-weight: 500;
         }
 
-        /* Cinematic Video Section */
-        .cinematic-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 2rem;
-            margin-top: 2rem;
-        }
-        
-        .cinematic-card {
-            background: var(--card-bg);
-            backdrop-filter: blur(12px);
-            border-radius: 24px;
-            overflow: hidden;
-            border: 1px solid var(--border-glow);
-            transition: all 0.3s ease;
-            cursor: pointer;
-        }
-        
-        .cinematic-card:hover {
-            transform: translateY(-10px);
-            border-color: var(--orange);
-            box-shadow: 0 25px 40px -20px rgba(255, 136, 0, 0.4);
-        }
-        
-        .cinematic-video {
-            position: relative;
-            width: 100%;
-            height: 260px;
-            background: #000;
-            overflow: hidden;
-        }
-        
-        .cinematic-video video {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            pointer-events: none;
-        }
-        
-        .cinematic-play {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0,0,0,0.4);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: 0.3s;
-        }
-        
-        .cinematic-play i {
-            font-size: 4rem;
-            color: var(--gold);
-            text-shadow: 0 0 15px rgba(0,0,0,0.5);
-        }
-        
-        .cinematic-card:hover .cinematic-play {
-            background: rgba(0,0,0,0.2);
-        }
-        
-        .cinematic-info {
-            padding: 1.2rem;
-            text-align: center;
-        }
-        
-        .cinematic-info h3 {
-            color: var(--gold);
-            font-size: 1rem;
-            margin-bottom: 0.3rem;
-        }
-        
-        .cinematic-info p {
-            font-size: 0.7rem;
-            color: #94a3b8;
-        }
-
-        /* Skills Grid */
+        /* Skills Grid with New Services */
         .skills-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            grid-template-columns: repeat(3, 1fr);
             gap: 1.5rem;
             margin-top: 2rem;
         }
@@ -405,7 +357,7 @@
         .skill-card {
             background: var(--card-bg);
             backdrop-filter: blur(10px);
-            padding: 1.8rem 1.5rem;
+            padding: 1.5rem;
             border-radius: 20px;
             text-align: center;
             border: 1px solid var(--border-glow);
@@ -414,30 +366,24 @@
         
         .skill-card:hover {
             border-color: var(--gold);
-            transform: translateY(-8px);
-            box-shadow: 0 20px 30px -15px rgba(255, 217, 102, 0.2);
+            transform: translateY(-5px);
         }
         
         .skill-card i {
-            font-size: 2.5rem;
+            font-size: 2rem;
             color: var(--gold);
-            margin-bottom: 1rem;
+            margin-bottom: 0.8rem;
         }
         
         .skill-card h4 {
-            font-size: 1rem;
+            font-size: 0.9rem;
             margin-bottom: 0.3rem;
         }
-        
-        .skill-card p {
-            font-size: 0.7rem;
-            color: #94a3b8;
-        }
 
-        /* Experience Grid */
+        /* Work Experience with Logos */
         .exp-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 1.5rem;
             margin-top: 1rem;
         }
@@ -445,102 +391,158 @@
         .exp-card {
             background: var(--card-bg);
             backdrop-filter: blur(10px);
-            padding: 1.8rem;
+            padding: 1.5rem;
             border-radius: 20px;
-            border-left: 4px solid var(--gold);
+            border-left: 3px solid var(--gold);
             transition: 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
         }
         
         .exp-card:hover {
             transform: translateX(5px);
-            background: rgba(30, 30, 50, 0.8);
         }
         
-        .exp-card i {
-            font-size: 2rem;
+        .exp-logo {
+            width: 60px;
+            height: 60px;
+            background: rgba(255, 217, 102, 0.1);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
             color: var(--gold);
-            margin-bottom: 1rem;
         }
         
-        .exp-card h3 {
-            font-size: 1.2rem;
+        .exp-info h3 {
+            font-size: 1rem;
+            margin-bottom: 0.2rem;
+        }
+        
+        .exp-info .company {
+            color: var(--gold);
+            font-size: 0.7rem;
             margin-bottom: 0.3rem;
         }
         
-        .exp-date {
-            color: var(--gold);
-            font-size: 0.75rem;
-            margin-bottom: 1rem;
-        }
-        
-        .portfolio-list {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.8rem;
-            margin-top: 1.5rem;
-        }
-        
-        .portfolio-badge {
-            background: rgba(255, 217, 102, 0.1);
-            padding: 0.5rem 1.2rem;
-            border-radius: 40px;
-            font-size: 0.75rem;
-            color: var(--gold);
-            transition: 0.2s;
-        }
-        
-        .portfolio-badge:hover {
-            background: rgba(255, 217, 102, 0.2);
-            transform: translateY(-2px);
+        .exp-info p {
+            font-size: 0.7rem;
+            color: #94a3b8;
         }
 
-        /* Food & Restaurant Grid */
-        .food-grid {
+        /* Movies as Editor Section */
+        .movies-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 1.8rem;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 1.5rem;
             margin-top: 2rem;
         }
         
-        .food-card {
+        .movie-card {
             background: var(--card-bg);
-            backdrop-filter: blur(10px);
-            border-radius: 24px;
+            border-radius: 16px;
             overflow: hidden;
-            transition: all 0.3s ease;
             border: 1px solid var(--border-glow);
+            transition: 0.3s;
             cursor: pointer;
         }
         
-        .food-card:hover {
-            transform: translateY(-8px);
-            border-color: var(--orange);
-            box-shadow: 0 20px 30px -15px rgba(255, 136, 0, 0.3);
+        .movie-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--gold);
         }
         
-        .food-card img {
+        .movie-poster {
+            height: 250px;
+            background: linear-gradient(135deg, #1a1a2e, #0a0a1a);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .movie-poster i {
+            font-size: 3rem;
+            color: var(--gold);
+        }
+        
+        .movie-info {
+            padding: 0.8rem;
+            text-align: center;
+        }
+        
+        .movie-info h4 {
+            font-size: 0.85rem;
+            color: var(--gold);
+        }
+        
+        .movie-info p {
+            font-size: 0.65rem;
+            color: #94a3b8;
+        }
+
+        /* Work Gallery */
+        .work-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+        
+        .gallery-item {
+            background: var(--card-bg);
+            border-radius: 16px;
+            overflow: hidden;
+            cursor: pointer;
+            border: 1px solid var(--border-glow);
+            transition: 0.3s;
+        }
+        
+        .gallery-item:hover {
+            transform: translateY(-5px);
+            border-color: var(--gold);
+        }
+        
+        .gallery-item img {
             width: 100%;
-            height: 240px;
+            height: 200px;
             object-fit: cover;
         }
         
-        .food-info {
-            padding: 1.2rem;
-        }
-        
-        .food-info h3 {
-            font-size: 1.1rem;
-            color: var(--gold);
-            margin-bottom: 0.3rem;
-        }
-        
-        .food-info p {
+        .gallery-caption {
+            padding: 0.8rem;
+            text-align: center;
             font-size: 0.7rem;
-            color: #94a3b8;
-            margin-bottom: 0.5rem;
+            color: var(--gold);
         }
 
-        /* Modal for Video Playback */
+        /* WhatsApp Float Button */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: #25D366;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            color: white;
+            box-shadow: 0 5px 20px rgba(37, 211, 102, 0.4);
+            transition: 0.3s;
+            z-index: 100;
+            cursor: pointer;
+        }
+        
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+            box-shadow: 0 8px 25px rgba(37, 211, 102, 0.6);
+        }
+
+        /* Modal */
         .modal {
             display: none;
             position: fixed;
@@ -548,11 +550,11 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(0,0,0,0.96);
+            background: rgba(0,0,0,0.95);
             z-index: 1000;
             justify-content: center;
             align-items: center;
-            backdrop-filter: blur(5px);
+            backdrop-filter: blur(8px);
         }
         
         .modal-content {
@@ -561,18 +563,13 @@
             max-width: 800px;
         }
         
-        .modal-content video {
+        .modal-content video, .modal-content iframe {
             width: 100%;
-            max-height: 80vh;
-            border-radius: 24px;
-            box-shadow: 0 30px 50px -20px rgba(0,0,0,0.8);
+            border-radius: 20px;
         }
         
         .modal-content iframe {
-            width: 100%;
             height: 600px;
-            border: none;
-            border-radius: 24px;
         }
         
         .close-modal {
@@ -580,59 +577,29 @@
             top: -50px;
             right: 0;
             color: white;
-            font-size: 2rem;
+            font-size: 1.8rem;
             cursor: pointer;
-            transition: 0.2s;
-        }
-        
-        .close-modal:hover {
-            color: var(--gold);
-            transform: scale(1.1);
         }
 
         footer {
             text-align: center;
-            padding: 3rem 2rem;
+            padding: 2rem;
             color: #94a3b8;
-            font-size: 0.8rem;
-            border-top: 1px solid rgba(255, 217, 102, 0.08);
-        }
-        
-        footer i {
-            color: var(--gold);
-            margin: 0 0.3rem;
+            font-size: 0.7rem;
         }
 
-        @media (max-width: 1100px) {
-            .reels-grid {
-                grid-template-columns: repeat(2, 1fr);
-                gap: 1.2rem;
-            }
+        @media (max-width: 1024px) {
+            .reels-grid { grid-template-columns: repeat(2, 1fr); }
+            .skills-grid { grid-template-columns: repeat(2, 1fr); }
         }
         
         @media (max-width: 768px) {
-            .container {
-                padding: 0 1.2rem;
-            }
-            .hero-content h1 {
-                font-size: 2.8rem;
-            }
-            .hero-image img {
-                width: 220px;
-                height: 220px;
-            }
-            .section-title {
-                font-size: 2rem;
-            }
-            .reels-grid {
-                grid-template-columns: 1fr;
-            }
-            .modal-content iframe {
-                height: 400px;
-            }
-            .cinematic-grid {
-                grid-template-columns: 1fr;
-            }
+            .container { padding: 0 1rem; }
+            .hero-content h1 { font-size: 2.5rem; }
+            .reels-grid { grid-template-columns: 1fr; }
+            .skills-grid { grid-template-columns: 1fr; }
+            .portfolio-big-title h2 { font-size: 2rem; }
+            .whatsapp-float { width: 50px; height: 50px; font-size: 1.5rem; bottom: 20px; right: 20px; }
         }
     </style>
 </head>
@@ -643,120 +610,142 @@
 <div class="orb orb-2"></div>
 <div class="orb orb-3"></div>
 
+<!-- WhatsApp Float Button -->
+<a href="https://wa.me/919500814946" target="_blank" class="whatsapp-float">
+    <i class="fab fa-whatsapp"></i>
+</a>
+
 <div class="container">
     <!-- HERO SECTION -->
     <section class="section">
         <div class="hero">
             <div class="hero-content">
-                <div class="hero-badge">✦ PROFESSIONAL PORTFOLIO ✦</div>
                 <h1>Yoga <span>Srinivasan</span></h1>
-                <div class="hero-tagline">Cinematic Director • Video Editor • Food Photographer</div>
+                <div class="professional-badge">✦ PROFESSIONAL PORTFOLIO ✦</div>
+                <div class="hero-tagline">Video Editor | Motion Graphics | Graphics Designer | Cameraman | Script Director</div>
                 <div class="hero-description">
-                    Award-winning Cinematic Director & Photographer specializing in Industrial Videos, Food & Restaurant Photography, Fashion Campaigns, and Commercial Productions. 10+ years of visual storytelling excellence.
+                    Professional Video Editor & Cinematic Director with 10+ years of experience. Specializing in Industrial Videos, Food Photography, Fashion Campaigns, and Commercial Productions.
                 </div>
                 <div class="hero-stats">
-                    <div class="stat"><div class="stat-number">50+</div><div class="stat-label">Projects</div></div>
-                    <div class="stat"><div class="stat-number">12+</div><div class="stat-label">Awards</div></div>
-                    <div class="stat"><div class="stat-number">100+</div><div class="stat-label">Happy Clients</div></div>
+                    <div class="stat"><div class="stat-number">500+</div><div class="stat-label">Projects</div></div>
+                    <div class="stat"><div class="stat-number">10+</div><div class="stat-label">Years Exp</div></div>
+                    <div class="stat"><div class="stat-number">70+</div><div class="stat-label">Happy Clients</div></div>
                 </div>
             </div>
-            <div class="hero-image">
-                <img src="image.png" alt="Yoga Srinivasan" onerror="this.src='https://placehold.co/400x400/1a1a2e/FFD966?text=Yoga+S'">
+            <div class="hero-right">
+                <div class="hero-image">
+                    <img src="image.png" alt="Yoga Srinivasan" onerror="this.src='https://placehold.co/400x400/1a1a2e/FFD966?text=Yoga+S'">
+                </div>
+                <!-- Industry Boxes - Empty Space Near Photo Filled -->
+                <div class="industry-boxes">
+                    <div class="industry-item"><i class="fas fa-camera"></i><span>Product Photography</span></div>
+                    <div class="industry-item"><i class="fas fa-film"></i><span>Cine Industry</span></div>
+                    <div class="industry-item"><i class="fas fa-tshirt"></i><span>Fashion Industry</span></div>
+                    <div class="industry-item"><i class="fas fa-calendar-check"></i><span>Event Management</span></div>
+                    <div class="industry-item"><i class="fas fa-graduation-cap"></i><span>Educational Industry</span></div>
+                    <div class="industry-item"><i class="fas fa-building"></i><span>Corporate Events</span></div>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- CINEMATIC VIDEOS SECTION (MP4 FILES) -->
-    <section class="section">
-        <div class="section-subtitle">CINEMATIC PRODUCTIONS</div>
-        <h2 class="section-title">🎬 Industrial & Cinematic Videos</h2>
-        <p style="color: #94a3b8; margin-bottom: 2rem;">Professional video works including cinematography, industrial shoots, and creative productions</p>
-        <div class="cinematic-grid" id="cinematicGrid"></div>
-    </section>
+    <!-- PORTFOLIO BIG TITLE -->
+    <div class="portfolio-big-title">
+        <h2>PORTFOLIO</h2>
+    </div>
 
-    <!-- REELS SECTION - 4 VERTICAL COLUMNS -->
+    <!-- REELS SECTION - ALL SAME COLOR -->
     <section class="section">
         <div class="reels-heading">
-            <div class="section-subtitle">SOCIAL CONTENT</div>
-            <h2 class="section-title">📱 Instagram & YouTube Reels</h2>
-            <p style="color: #94a3b8;">Click on any video to watch in fullscreen | 4 Vertical Columns</p>
+            <div class="section-subtitle">REELS GALLERY</div>
+            <h2 class="section-title">📱 Vertical Reels Collection</h2>
         </div>
         <div class="reels-grid" id="reelsGrid"></div>
     </section>
 
-    <!-- SKILLS & SERVICES SECTION -->
+    <!-- SKILLS & SERVICES (UPDATED) -->
     <section class="section">
         <div class="section-subtitle">WHAT I OFFER</div>
         <h2 class="section-title">Skills & Services</h2>
         <div class="skills-grid">
-            <div class="skill-card"><i class="fas fa-film"></i><h4>Video Editing</h4><p>Premiere Pro, DaVinci Resolve</p></div>
-            <div class="skill-card"><i class="fas fa-video"></i><h4>Cinematorgraphy</h4><p>Industrial & Commercial</p></div>
-            <div class="skill-card"><i class="fas fa-magic"></i><h4>Motion Graphics</h4><p>After Effects, VFX</p></div>
-            <div class="skill-card"><i class="fas fa-utensils"></i><h4>Food Photography</h4><p>Restaurant & Product</p></div>
-            <div class="skill-card"><i class="fas fa-camera"></i><h4>Product Photography</h4><p>Studio & Commercial</p></div>
-            <div class="skill-card"><i class="fas fa-tshirt"></i><h4>Fashion Photography</h4><p>Editorial & Campaigns</p></div>
+            <div class="skill-card"><i class="fas fa-film"></i><h4>Video Editing</h4></div>
+            <div class="skill-card"><i class="fas fa-pen-fancy"></i><h4>Content Writing</h4></div>
+            <div class="skill-card"><i class="fas fa-code"></i><h4>Website Designing</h4></div>
+            <div class="skill-card"><i class="fas fa-camera"></i><h4>Product Photography</h4></div>
+            <div class="skill-card"><i class="fas fa-heart"></i><h4>Wedding Events</h4></div>
+            <div class="skill-card"><i class="fas fa-building"></i><h4>Corporate Events</h4></div>
         </div>
     </section>
 
-    <!-- FOOD & RESTAURANT PHOTOGRAPHY SECTION -->
-    <section class="section">
-        <div class="section-subtitle">GASTRONOMY PORTFOLIO</div>
-        <h2 class="section-title">🍽️ Food & Restaurant Photography</h2>
-        <div class="food-grid" id="foodGrid"></div>
-    </section>
-
-    <!-- EXPERIENCE SECTION -->
+    <!-- WORK EXPERIENCE WITH LOGOS -->
     <section class="section">
         <div class="section-subtitle">MY JOURNEY</div>
         <h2 class="section-title">Work Experience</h2>
         <div class="exp-grid">
             <div class="exp-card">
-                <i class="fas fa-video"></i>
-                <h3>Cinematic Director & Photographer</h3>
-                <div class="exp-date">Eshaa | 2021 – Present</div>
-                <p style="font-size: 0.85rem; line-height: 1.5;">Directed ad films, promotional videos, and fashion campaigns. Managed lighting, cinematography teams, and post-production.</p>
+                <div class="exp-logo"><i class="fas fa-tv"></i></div>
+                <div class="exp-info">
+                    <h3>Video Editor</h3>
+                    <div class="company">News7 Tamil</div>
+                    <p>News editing & production</p>
+                </div>
             </div>
             <div class="exp-card">
-                <i class="fas fa-graduation-cap"></i>
-                <h3>Visual Storyteller</h3>
-                <div class="exp-date">Shanmugha College of Engineering and Technology, Salem | 2018 – 2023</div>
-                <p style="font-size: 0.85rem; line-height: 1.5;">Led short film productions, documentary projects, and mentored aspiring cinematographers.</p>
+                <div class="exp-logo"><i class="fas fa-satellite-dish"></i></div>
+                <div class="exp-info">
+                    <h3>Senior Editor</h3>
+                    <div class="company">Sathyam TV</div>
+                    <p>TV show editing & post-production</p>
+                </div>
             </div>
             <div class="exp-card">
-                <i class="fas fa-camera-retro"></i>
-                <h3>Freelance Photographer</h3>
-                <div class="exp-date">Independent Projects | 2015 – Present</div>
-                <p style="font-size: 0.85rem; line-height: 1.5;">Industrial Videos, Food & Restaurant, Product, Fashion, Wedding, and Corporate event photography.</p>
+                <div class="exp-logo"><i class="fas fa-university"></i></div>
+                <div class="exp-info">
+                    <h3>Visual Storyteller</h3>
+                    <div class="company">SRM University</div>
+                    <p>Documentary & event coverage</p>
+                </div>
             </div>
-        </div>
-        
-        <div style="margin-top: 2.5rem;">
-            <h4 style="color: var(--gold); margin-bottom: 1rem; font-size: 1.1rem;">📋 Selected Portfolio Projects</h4>
-            <div class="portfolio-list">
-                <span class="portfolio-badge">Industrial Cinematic Videos</span>
-                <span class="portfolio-badge">The Master Key - Bar & Kitchen</span>
-                <span class="portfolio-badge">Bistro De Paris</span>
-                <span class="portfolio-badge">Southern Spice Restaurant</span>
-                <span class="portfolio-badge">NetZero Moon Shots</span>
-                <span class="portfolio-badge">Eshaa Campaign Films</span>
-                <span class="portfolio-badge">Shanmugha College Documentaries</span>
-                <span class="portfolio-badge">Fashion Editorial Shoots</span>
+            <div class="exp-card">
+                <div class="exp-logo"><i class="fas fa-chart-line"></i></div>
+                <div class="exp-info">
+                    <h3>Creative Director</h3>
+                    <div class="company">Straive</div>
+                    <p>Corporate video production</p>
+                </div>
             </div>
-        </div>
-        
-        <div style="margin-top: 2rem; padding: 1.5rem; background: rgba(255, 217, 102, 0.05); border-radius: 16px; border-left: 3px solid var(--gold);">
-            <p style="font-size: 0.9rem;"><i class="fas fa-quote-left" style="color: var(--gold); margin-right: 0.5rem;"></i> All works in this portfolio are created by Yoga Srinivasan. Each project represents my commitment to visual excellence and storytelling.</p>
+            <div class="exp-card">
+                <div class="exp-logo"><i class="fas fa-school"></i></div>
+                <div class="exp-info">
+                    <h3>Visual Media Consultant</h3>
+                    <div class="company">Montessori School</div>
+                    <p>Educational video content</p>
+                </div>
+            </div>
         </div>
     </section>
 
+    <!-- MOVIES AS EDITOR - FEATURE FILM EDITOR -->
+    <section class="section">
+        <div class="section-subtitle">FEATURE FILM EDITOR</div>
+        <h2 class="section-title">🎬 Movies as Editor</h2>
+        <div class="movies-grid" id="moviesGrid"></div>
+    </section>
+
+    <!-- WORK GALLERY - ALL PHOTOS -->
+    <section class="section">
+        <div class="section-subtitle">VISUAL STORIES</div>
+        <h2 class="section-title">📸 Work Gallery</h2>
+        <div class="work-gallery" id="workGallery"></div>
+    </section>
+
     <footer>
-        <p><i class="fas fa-copyright"></i> 2025 Yoga Srinivasan | Cinematic Director, Video Editor & Photographer</p>
-        <p style="margin-top: 0.8rem;">
-            <i class="fas fa-envelope"></i> sriniofficial90@gmail.com &nbsp;&nbsp;|&nbsp;&nbsp;
-            <i class="fas fa-phone"></i> +91 95008 14946 &nbsp;&nbsp;|&nbsp;&nbsp;
-            <i class="fas fa-map-marker"></i> Chennai / Salem, India
+        <p><i class="fas fa-copyright"></i> 2025 Yoga Srinivasan | Video Editor & Cinematic Director</p>
+        <p style="margin-top: 0.5rem;">
+            <i class="fas fa-envelope"></i> sriniofficial90@gmail.com &nbsp;|&nbsp;
+            <i class="fas fa-phone"></i> +91 95008 14946 &nbsp;|&nbsp;
+            <i class="fab fa-whatsapp"></i> WhatsApp Available
         </p>
-        <p style="margin-top: 0.8rem; font-size: 0.7rem;">Specializing in Industrial Videos, Food, Restaurant, Fashion & Commercial Photography</p>
     </footer>
 </div>
 
@@ -769,93 +758,57 @@
 </div>
 
 <script>
-    // ========== CINEMATIC VIDEOS (YOUR MP4 FILES) ==========
-    const cinematicVideos = [
-        { title: "Cinematic Industrial Video - Project 1", description: "Professional cinematography & video production", file: "video1.mp4", type: "mp4" },
-        { title: "Creative Video Production - Project 2", description: "High-end visual storytelling", file: "video2.mp4", type: "mp4" },
-        { title: "Professional Video Work - Project 3", description: "Industrial & commercial video shoot", file: "video3.mp4", type: "mp4" }
-    ];
-    
-    // ========== REELS DATA - ORGANIZED INTO 4 VERTICAL COLUMNS ==========
+    // ========== REELS DATA - ALL SAME STYLE ==========
     const facePrepReels = [
-        { title: "Face Prep - Campus Workshop", url: "https://www.instagram.com/reel/DPTo4ttj4Nu/embed", type: "instagram" },
-        { title: "Face Prep - Student Success", url: "https://www.instagram.com/reel/DN748-QDeTt/embed", type: "instagram" },
-        { title: "Face Prep - Career Guidance", url: "https://www.instagram.com/reel/DNLHimShZ4A/embed", type: "instagram" }
+        { title: "Face Prep - Campus Workshop", url: "https://www.instagram.com/reel/DPTo4ttj4Nu/embed" },
+        { title: "Face Prep - Student Success", url: "https://www.instagram.com/reel/DN748-QDeTt/embed" },
+        { title: "Face Prep - Career Guidance", url: "https://www.instagram.com/reel/DNLHimShZ4A/embed" }
     ];
     
     const shanmughaReels = [
-        { title: "Shanmugha College - Cultural Fest", url: "https://www.instagram.com/reel/DM0FvUmIZMc/embed", type: "instagram" },
-        { title: "Shanmugha College - Tech Symposium", url: "https://www.instagram.com/reel/DMKqWUXNbMr/embed", type: "instagram" },
-        { title: "Shanmugha College - Annual Day", url: "https://www.instagram.com/reel/DL7aSTCNzHO/embed", type: "instagram" },
-        { title: "Shanmugha College - Sports Meet", url: "https://www.instagram.com/reel/DHdWoZANIIq/embed", type: "instagram" },
-        { title: "Shanmugha College - Short Film", url: "https://www.instagram.com/reel/DJEYRUYtEoF/embed", type: "instagram" }
+        { title: "Sri Shanmuga College - Cultural Fest", url: "https://www.instagram.com/reel/DM0FvUmIZMc/embed" },
+        { title: "Sri Shanmuga College - Tech Symposium", url: "https://www.instagram.com/reel/DMKqWUXNbMr/embed" },
+        { title: "Sri Shanmuga College - Annual Day", url: "https://www.instagram.com/reel/DL7aSTCNzHO/embed" },
+        { title: "Sri Shanmuga College - Sports Meet", url: "https://www.instagram.com/reel/DHdWoZANIIq/embed" },
+        { title: "Sri Shanmuga College - Short Film", url: "https://www.instagram.com/reel/DJEYRUYtEoF/embed" }
     ];
     
     const fashionReels = [
-        { title: "Eshaa - Campaign Film 1", url: "https://www.youtube.com/embed/dGoy8SXZ4Ec", type: "youtube" },
-        { title: "Eshaa - Campaign Film 2", url: "https://www.youtube.com/embed/R0imt1SA91U", type: "youtube" },
-        { title: "Premium Hoodie Collection", url: "https://www.instagram.com/reel/DPTo4ttj4Nu/embed", type: "instagram" }
+        { title: "Eshaa - Campaign Film 1", url: "https://www.youtube.com/embed/dGoy8SXZ4Ec" },
+        { title: "Eshaa - Campaign Film 2", url: "https://www.youtube.com/embed/R0imt1SA91U" },
+        { title: "Premium Hoodie Collection", url: "https://www.instagram.com/reel/DPTo4ttj4Nu/embed" }
     ];
     
     const otherReels = [
-        { title: "Cinematic BTS - Behind Scenes", url: "https://www.instagram.com/reel/DPTo4ttj4Nu/embed", type: "instagram" },
-        { title: "Creative Montage - VFX", url: "https://www.instagram.com/reel/DN748-QDeTt/embed", type: "instagram" },
-        { title: "Motion Graphics Showreel", url: "https://www.instagram.com/reel/DNLHimShZ4A/embed", type: "instagram" }
+        { title: "Cinematic BTS - Behind Scenes", url: "https://www.instagram.com/reel/DPTo4ttj4Nu/embed" },
+        { title: "Creative Montage - VFX", url: "https://www.instagram.com/reel/DN748-QDeTt/embed" },
+        { title: "Motion Graphics Showreel", url: "https://www.instagram.com/reel/DNLHimShZ4A/embed" }
     ];
     
-    // Render Cinematic Videos Section
-    const cinematicGrid = document.getElementById('cinematicGrid');
-    cinematicGrid.innerHTML = '';
-    cinematicVideos.forEach(video => {
-        const card = document.createElement('div');
-        card.className = 'cinematic-card';
-        card.setAttribute('data-video', video.file);
-        card.setAttribute('data-type', 'mp4');
-        card.innerHTML = `
-            <div class="cinematic-video">
-                <video src="${video.file}" preload="metadata"></video>
-                <div class="cinematic-play">
-                    <i class="fas fa-play-circle"></i>
-                </div>
-            </div>
-            <div class="cinematic-info">
-                <h3>${video.title}</h3>
-                <p>${video.description}</p>
-            </div>
-        `;
-        card.addEventListener('click', () => {
-            openVideo(video.file, 'mp4');
-        });
-        cinematicGrid.appendChild(card);
-    });
-    
-    // Render Reels Columns
-    function renderColumn(containerId, reelsArray, headerTitle, headerSub, headerClass) {
+    function renderColumn(containerId, reelsArray, headerTitle, headerSub) {
         const container = document.getElementById(containerId);
         if (!container) return;
         
         let html = `
             <div class="reel-column">
-                <div class="column-header ${headerClass}">
+                <div class="column-header">
                     <h3>${headerTitle}</h3>
                     <p>${headerSub}</p>
                 </div>
         `;
         
         reelsArray.forEach((reel) => {
-            if (reel.type === 'youtube' || reel.type === 'instagram') {
-                html += `
-                    <div class="reel-item" data-url="${reel.url}" data-type="embed">
-                        <div class="reel-video">
-                            <iframe src="${reel.url}" frameborder="0" scrolling="no" allowtransparency="true" allow="encrypted-media"></iframe>
-                            <div class="play-overlay">
-                                <i class="fas fa-play-circle"></i>
-                            </div>
+            html += `
+                <div class="reel-item" data-url="${reel.url}">
+                    <div class="reel-video">
+                        <iframe src="${reel.url}" frameborder="0" scrolling="no" allowtransparency="true" allow="encrypted-media"></iframe>
+                        <div class="play-overlay">
+                            <i class="fas fa-play-circle"></i>
                         </div>
-                        <div class="reel-title">${reel.title}</div>
                     </div>
-                `;
-            }
+                    <div class="reel-title">${reel.title}</div>
+                </div>
+            `;
         });
         
         html += `</div>`;
@@ -870,37 +823,77 @@
         <div id="col-other"></div>
     `;
     
-    renderColumn('col-faceprep', facePrepReels, '🎓 FACE PREP CAMPUS', 'Education & Training Reels', 'header-faceprep');
-    renderColumn('col-shanmugha', shanmughaReels, '🏛️ SHANMUGHA COLLEGE', 'Engineering & Technology, Salem', 'header-shanmugha');
-    renderColumn('col-fashion', fashionReels, '👕 FASHION & TEXTILE', 'Hoodie / Product Campaigns', 'header-fashion');
-    renderColumn('col-other', otherReels, '🎬 OTHER CREATIONS', 'Additional Works & Montages', 'header-other');
+    renderColumn('col-faceprep', facePrepReels, '🎓 FACE PREP CAMPUS', 'Education Focus');
+    renderColumn('col-shanmugha', shanmughaReels, '🏛️ SRI SHANMUGA COLLEGE', 'Event Focus');
+    renderColumn('col-fashion', fashionReels, '👕 FASHION & TECHNOLOGY', 'Hoodie / Textile Focus');
+    renderColumn('col-other', otherReels, '🎬 CREATIVE & OTHERS', 'Additional Works');
     
-    // ========== MODAL FOR VIDEO PLAYBACK ==========
+    // Movies as Editor
+    const moviesGrid = document.getElementById('moviesGrid');
+    const movies = [
+        { title: "Kaadhal Konjam", role: "Feature Film Editor", year: "2023" },
+        { title: "Neruppu Mai", role: "Feature Film Editor", year: "2022" },
+        { title: "Ennai Thalatta", role: "Feature Film Editor", year: "2021" },
+        { title: "Vaanam Thozha", role: "Feature Film Editor", year: "2020" }
+    ];
+    
+    moviesGrid.innerHTML = '';
+    movies.forEach(movie => {
+        const card = document.createElement('div');
+        card.className = 'movie-card';
+        card.innerHTML = `
+            <div class="movie-poster">
+                <i class="fas fa-film"></i>
+            </div>
+            <div class="movie-info">
+                <h4>${movie.title}</h4>
+                <p>${movie.role} | ${movie.year}</p>
+            </div>
+        `;
+        moviesGrid.appendChild(card);
+    });
+    
+    // Work Gallery
+    const workGallery = document.getElementById('workGallery');
+    const galleryImages = [
+        { title: "The Master Key - Bar & Kitchen", img: "image1.jpeg" },
+        { title: "Lunch Combo Offer", img: "image2.jpeg" },
+        { title: "Bistro De Paris", img: "image3.jpeg" },
+        { title: "NetZero Moon Shots", img: "image4.jpeg" },
+        { title: "Southern Spice - Dosa", img: "image5.jpeg" },
+        { title: "Southern Spice - Curries", img: "image6.jpeg" }
+    ];
+    
+    workGallery.innerHTML = '';
+    galleryImages.forEach(img => {
+        const item = document.createElement('div');
+        item.className = 'gallery-item';
+        item.innerHTML = `
+            <img src="${img.img}" alt="${img.title}" onerror="this.src='https://placehold.co/400x300/1a1a2e/FFD966?text=${img.title}'">
+            <div class="gallery-caption">📸 ${img.title}</div>
+        `;
+        item.addEventListener('click', () => {
+            window.open(img.img, '_blank');
+        });
+        workGallery.appendChild(item);
+    });
+    
+    // Modal Functions
     const modal = document.getElementById('videoModal');
     const modalVideoContainer = document.getElementById('modalVideoContainer');
     const closeModal = document.querySelector('.close-modal');
     
-    function openVideo(src, type) {
+    function openVideo(src) {
         modalVideoContainer.innerHTML = '';
-        if (type === 'mp4') {
-            const videoElem = document.createElement('video');
-            videoElem.src = src;
-            videoElem.controls = true;
-            videoElem.autoplay = true;
-            videoElem.style.width = '100%';
-            videoElem.style.borderRadius = '24px';
-            modalVideoContainer.appendChild(videoElem);
-        } else {
-            const iframe = document.createElement('iframe');
-            iframe.src = src;
-            iframe.allow = "autoplay; encrypted-media; fullscreen";
-            iframe.allowFullscreen = true;
-            iframe.style.width = '100%';
-            iframe.style.height = '600px';
-            iframe.style.border = 'none';
-            iframe.style.borderRadius = '24px';
-            modalVideoContainer.appendChild(iframe);
-        }
+        const iframe = document.createElement('iframe');
+        iframe.src = src;
+        iframe.allow = "autoplay; encrypted-media; fullscreen";
+        iframe.allowFullscreen = true;
+        iframe.style.width = '100%';
+        iframe.style.height = '600px';
+        iframe.style.border = 'none';
+        iframe.style.borderRadius = '20px';
+        modalVideoContainer.appendChild(iframe);
         modal.style.display = 'flex';
         document.body.style.overflow = 'hidden';
     }
@@ -911,14 +904,11 @@
         document.body.style.overflow = 'auto';
     }
     
-    // Add click listeners to all reel items
     document.addEventListener('click', function(e) {
         const reelItem = e.target.closest('.reel-item');
         if (reelItem) {
             const videoUrl = reelItem.getAttribute('data-url');
-            if (videoUrl) {
-                openVideo(videoUrl, 'embed');
-            }
+            if (videoUrl) openVideo(videoUrl);
         }
     });
     
@@ -927,71 +917,17 @@
         if (e.target === modal) closeVideoModal();
     });
     
-    document.addEventListener('keydown', (e) => {
-        if (e.key === 'Escape' && modal.style.display === 'flex') {
-            closeVideoModal();
-        }
-    });
-    
-    // ========== FOOD & RESTAURANT GALLERY ==========
-    const foodItems = [
-        { title: "THE MASTER KEY", subtitle: "Bar & Kitchen - Unit of Flair Monsters", description: "Sing along Sunday | Tag your squad!", img: "image1.jpeg", location: "Near PVR Grand Mall, Velacherry, Chennai" },
-        { title: "LUNCH COMBO OFFER", subtitle: "Mocktail + Beer + Main Course", description: "Mocktail (or) Beer + Main course - ₹599", img: "image2.jpeg", location: "The Master Key, Velacherry, Chennai" },
-        { title: "BISTRO DE PARIS", subtitle: "Crafted for Connoisseurs", description: "GRASS FED TENDERLOIN", img: "image3.jpeg", location: "446 Chapel Street, South Yarra, Melbourne" },
-        { title: "NETZERO", subtitle: "MOON SHOTS", description: "SOLID TOOTHPASTE - FENNEL PUNCH", img: "image4.jpeg", location: "Premium Oral Care" },
-        { title: "SOUTHERN SPICE", subtitle: "Flavors of South Indian cuisine", description: "Dosa - Authentic South Indian", img: "image5.jpeg", location: "446 Chapel Street, South Yarra VIC 3141" },
-        { title: "SOUTHERN SPICE", subtitle: "Flavors of South Indian cuisine", description: "Prawn Curry & Malabar Fish Curry", img: "image6.jpeg", location: "446 Chapel Street, South Yarra VIC 3141" }
-    ];
-    
-    const foodGrid = document.getElementById('foodGrid');
-    foodGrid.innerHTML = '';
-    foodItems.forEach(item => {
-        const card = document.createElement('div');
-        card.className = 'food-card';
-        card.innerHTML = `
-            <img src="${item.img}" alt="${item.title}" onerror="this.src='https://placehold.co/600x400/1a1a2e/FFD966?text=${encodeURIComponent(item.title)}'">
-            <div class="food-info">
-                <h3>${item.title}</h3>
-                <p><i class="fas fa-location-dot" style="color: #FFD966; font-size: 0.6rem;"></i> ${item.location}</p>
-                <p style="font-size: 0.75rem; margin-top: 0.5rem;">${item.description}</p>
-            </div>
-        `;
-        card.addEventListener('click', () => {
-            window.open(item.img, '_blank');
-        });
-        foodGrid.appendChild(card);
-    });
-    
-    // GSAP Scroll Animations
+    // GSAP Animations
     gsap.registerPlugin(ScrollTrigger);
-    
-    gsap.utils.toArray('.cinematic-card, .reel-column, .skill-card, .exp-card, .food-card').forEach(el => {
+    gsap.utils.toArray('.reel-column, .skill-card, .exp-card, .movie-card, .gallery-item, .industry-item').forEach(el => {
         gsap.from(el, {
-            scrollTrigger: {
-                trigger: el,
-                start: "top 85%",
-                toggleActions: "play none none reverse"
-            },
-            opacity: 0,
-            y: 50,
-            duration: 0.7,
-            ease: "power2.out"
+            scrollTrigger: { trigger: el, start: "top 85%", toggleActions: "play none none reverse" },
+            opacity: 0, y: 50, duration: 0.7, ease: "power2.out"
         });
     });
     
-    gsap.from('.hero-content', {
-        opacity: 0,
-        x: -50,
-        duration: 1,
-        ease: "power3.out"
-    });
-    
-    gsap.from('.hero-image', {
-        opacity: 0,
-        scale: 0.8,
-        duration: 1,
-        delay: 0.3,
-        ease: "back.out(0.4)"
+    gsap.from('.hero-content, .hero-right', {
+        opacity: 0, y: 30, duration: 1, stagger: 0.2
     });
 </script>
 </body>
