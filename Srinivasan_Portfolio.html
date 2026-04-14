@@ -1,0 +1,998 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Yoga Srinivasan | Cinematic Director, Video Editor & Photographer</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #0a0a0f;
+            font-family: 'Inter', sans-serif;
+            color: #ffffff;
+            overflow-x: hidden;
+        }
+
+        :root {
+            --gold: #FFD966;
+            --orange: #FF8800;
+            --dark: #0a0a0f;
+            --card-bg: rgba(20, 20, 35, 0.7);
+            --border-glow: rgba(255, 217, 102, 0.2);
+        }
+
+        .bg-animation {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -2;
+            background: radial-gradient(circle at 20% 30%, #0f0f1a, #05050a);
+        }
+        
+        .bg-animation::before {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: repeating-linear-gradient(45deg, rgba(255,200,100,0.02) 0px, rgba(255,200,100,0.02) 2px, transparent 2px, transparent 10px);
+        }
+
+        .orb {
+            position: fixed;
+            border-radius: 50%;
+            filter: blur(80px);
+            opacity: 0.3;
+            z-index: -1;
+            animation: floatOrb 20s infinite alternate;
+        }
+        .orb-1 { width: 500px; height: 500px; background: #ff6600; top: -200px; left: -200px; }
+        .orb-2 { width: 600px; height: 600px; background: #ff3366; bottom: -300px; right: -200px; animation-delay: -5s; }
+        .orb-3 { width: 400px; height: 400px; background: #ffcc00; top: 40%; left: 60%; animation-delay: -10s; }
+        
+        @keyframes floatOrb {
+            0% { transform: translate(0, 0) scale(1); }
+            100% { transform: translate(100px, 100px) scale(1.2); }
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        .section {
+            padding: 5rem 0;
+            border-bottom: 1px solid rgba(255, 217, 102, 0.08);
+            scroll-margin-top: 2rem;
+        }
+
+        .section-title {
+            font-size: 2.8rem;
+            font-weight: 800;
+            margin-bottom: 2rem;
+            background: linear-gradient(135deg, #FFFFFF, var(--gold), var(--orange));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            letter-spacing: -0.02em;
+        }
+        
+        .section-subtitle {
+            color: var(--gold);
+            font-size: 0.85rem;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 90vh;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 3rem;
+        }
+        
+        .hero-content {
+            flex: 1.2;
+        }
+        
+        .hero-badge {
+            background: rgba(255, 217, 102, 0.12);
+            padding: 0.5rem 1.2rem;
+            border-radius: 40px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--gold);
+            display: inline-block;
+            margin-bottom: 1.5rem;
+            backdrop-filter: blur(10px);
+        }
+        
+        .hero-content h1 {
+            font-size: 4.5rem;
+            font-weight: 900;
+            margin-bottom: 0.5rem;
+            line-height: 1.1;
+        }
+        
+        .hero-content h1 span {
+            background: linear-gradient(135deg, var(--gold), var(--orange));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        
+        .hero-tagline {
+            font-size: 1.2rem;
+            color: #94a3b8;
+            margin-bottom: 1.5rem;
+        }
+        
+        .hero-description {
+            color: #94a3b8;
+            max-width: 500px;
+            margin-bottom: 2rem;
+            line-height: 1.6;
+        }
+        
+        .hero-stats {
+            display: flex;
+            gap: 2rem;
+            margin-top: 1rem;
+        }
+        
+        .stat {
+            text-align: left;
+        }
+        
+        .stat-number {
+            font-size: 2rem;
+            font-weight: 800;
+            color: var(--gold);
+        }
+        
+        .stat-label {
+            font-size: 0.75rem;
+            color: #94a3b8;
+        }
+        
+        .hero-image {
+            flex: 0.8;
+            text-align: center;
+        }
+        
+        .hero-image img {
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid var(--gold);
+            box-shadow: 0 0 50px rgba(255, 217, 102, 0.3);
+            animation: pulseGlow 3s infinite;
+        }
+        
+        @keyframes pulseGlow {
+            0% { box-shadow: 0 0 0 0 rgba(255, 217, 102, 0.4); }
+            70% { box-shadow: 0 0 0 20px rgba(255, 217, 102, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(255, 217, 102, 0); }
+        }
+
+        /* ========== REELS SECTION - 4 VERTICAL COLUMNS ========== */
+        .reels-heading {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        
+        .reels-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.5rem;
+        }
+        
+        .reel-column {
+            background: var(--card-bg);
+            backdrop-filter: blur(12px);
+            border-radius: 24px;
+            padding: 1rem;
+            border: 1px solid var(--border-glow);
+            transition: transform 0.3s ease;
+        }
+        
+        .reel-column:hover {
+            transform: translateY(-5px);
+            border-color: var(--gold);
+        }
+        
+        .column-header {
+            text-align: center;
+            padding: 1rem;
+            border-radius: 16px;
+            margin-bottom: 1rem;
+        }
+        
+        .column-header h3 {
+            font-size: 1rem;
+            font-weight: 700;
+            color: var(--gold);
+        }
+        
+        .column-header p {
+            font-size: 0.7rem;
+            color: #94a3b8;
+            margin-top: 0.3rem;
+        }
+        
+        .header-faceprep { background: linear-gradient(135deg, #1a472a, #0a2a1a); border-bottom: 2px solid #00ff88; }
+        .header-shanmugha { background: linear-gradient(135deg, #1a2a4a, #0a1a3a); border-bottom: 2px solid var(--gold); }
+        .header-fashion { background: linear-gradient(135deg, #4a1a2a, #3a0a1a); border-bottom: 2px solid #ff6680; }
+        .header-other { background: linear-gradient(135deg, #2a2a4a, #1a1a3a); border-bottom: 2px solid #aa88ff; }
+        
+        .reel-item {
+            margin-bottom: 1rem;
+            border-radius: 16px;
+            overflow: hidden;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .reel-item:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px -10px rgba(0,0,0,0.5);
+        }
+        
+        .reel-video {
+            position: relative;
+            width: 100%;
+            height: 200px;
+            background: #000;
+            border-radius: 12px;
+            overflow: hidden;
+        }
+        
+        .reel-video iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+            pointer-events: none;
+        }
+        
+        /* For MP4 videos */
+        .reel-video video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            pointer-events: none;
+        }
+        
+        .play-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.5);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: 0.3s;
+        }
+        
+        .play-overlay i {
+            font-size: 3rem;
+            color: var(--gold);
+            text-shadow: 0 0 10px rgba(0,0,0,0.5);
+            transition: transform 0.2s;
+        }
+        
+        .reel-item:hover .play-overlay {
+            background: rgba(0,0,0,0.3);
+        }
+        
+        .reel-item:hover .play-overlay i {
+            transform: scale(1.1);
+        }
+        
+        .reel-title {
+            padding: 0.6rem;
+            font-size: 0.7rem;
+            text-align: center;
+            color: #cbd5e6;
+            font-weight: 500;
+        }
+
+        /* Cinematic Video Section */
+        .cinematic-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .cinematic-card {
+            background: var(--card-bg);
+            backdrop-filter: blur(12px);
+            border-radius: 24px;
+            overflow: hidden;
+            border: 1px solid var(--border-glow);
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        
+        .cinematic-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--orange);
+            box-shadow: 0 25px 40px -20px rgba(255, 136, 0, 0.4);
+        }
+        
+        .cinematic-video {
+            position: relative;
+            width: 100%;
+            height: 260px;
+            background: #000;
+            overflow: hidden;
+        }
+        
+        .cinematic-video video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            pointer-events: none;
+        }
+        
+        .cinematic-play {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.4);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: 0.3s;
+        }
+        
+        .cinematic-play i {
+            font-size: 4rem;
+            color: var(--gold);
+            text-shadow: 0 0 15px rgba(0,0,0,0.5);
+        }
+        
+        .cinematic-card:hover .cinematic-play {
+            background: rgba(0,0,0,0.2);
+        }
+        
+        .cinematic-info {
+            padding: 1.2rem;
+            text-align: center;
+        }
+        
+        .cinematic-info h3 {
+            color: var(--gold);
+            font-size: 1rem;
+            margin-bottom: 0.3rem;
+        }
+        
+        .cinematic-info p {
+            font-size: 0.7rem;
+            color: #94a3b8;
+        }
+
+        /* Skills Grid */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+        
+        .skill-card {
+            background: var(--card-bg);
+            backdrop-filter: blur(10px);
+            padding: 1.8rem 1.5rem;
+            border-radius: 20px;
+            text-align: center;
+            border: 1px solid var(--border-glow);
+            transition: all 0.3s ease;
+        }
+        
+        .skill-card:hover {
+            border-color: var(--gold);
+            transform: translateY(-8px);
+            box-shadow: 0 20px 30px -15px rgba(255, 217, 102, 0.2);
+        }
+        
+        .skill-card i {
+            font-size: 2.5rem;
+            color: var(--gold);
+            margin-bottom: 1rem;
+        }
+        
+        .skill-card h4 {
+            font-size: 1rem;
+            margin-bottom: 0.3rem;
+        }
+        
+        .skill-card p {
+            font-size: 0.7rem;
+            color: #94a3b8;
+        }
+
+        /* Experience Grid */
+        .exp-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1rem;
+        }
+        
+        .exp-card {
+            background: var(--card-bg);
+            backdrop-filter: blur(10px);
+            padding: 1.8rem;
+            border-radius: 20px;
+            border-left: 4px solid var(--gold);
+            transition: 0.3s;
+        }
+        
+        .exp-card:hover {
+            transform: translateX(5px);
+            background: rgba(30, 30, 50, 0.8);
+        }
+        
+        .exp-card i {
+            font-size: 2rem;
+            color: var(--gold);
+            margin-bottom: 1rem;
+        }
+        
+        .exp-card h3 {
+            font-size: 1.2rem;
+            margin-bottom: 0.3rem;
+        }
+        
+        .exp-date {
+            color: var(--gold);
+            font-size: 0.75rem;
+            margin-bottom: 1rem;
+        }
+        
+        .portfolio-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.8rem;
+            margin-top: 1.5rem;
+        }
+        
+        .portfolio-badge {
+            background: rgba(255, 217, 102, 0.1);
+            padding: 0.5rem 1.2rem;
+            border-radius: 40px;
+            font-size: 0.75rem;
+            color: var(--gold);
+            transition: 0.2s;
+        }
+        
+        .portfolio-badge:hover {
+            background: rgba(255, 217, 102, 0.2);
+            transform: translateY(-2px);
+        }
+
+        /* Food & Restaurant Grid */
+        .food-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 1.8rem;
+            margin-top: 2rem;
+        }
+        
+        .food-card {
+            background: var(--card-bg);
+            backdrop-filter: blur(10px);
+            border-radius: 24px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            border: 1px solid var(--border-glow);
+            cursor: pointer;
+        }
+        
+        .food-card:hover {
+            transform: translateY(-8px);
+            border-color: var(--orange);
+            box-shadow: 0 20px 30px -15px rgba(255, 136, 0, 0.3);
+        }
+        
+        .food-card img {
+            width: 100%;
+            height: 240px;
+            object-fit: cover;
+        }
+        
+        .food-info {
+            padding: 1.2rem;
+        }
+        
+        .food-info h3 {
+            font-size: 1.1rem;
+            color: var(--gold);
+            margin-bottom: 0.3rem;
+        }
+        
+        .food-info p {
+            font-size: 0.7rem;
+            color: #94a3b8;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Modal for Video Playback */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.96);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+            backdrop-filter: blur(5px);
+        }
+        
+        .modal-content {
+            position: relative;
+            width: 90%;
+            max-width: 800px;
+        }
+        
+        .modal-content video {
+            width: 100%;
+            max-height: 80vh;
+            border-radius: 24px;
+            box-shadow: 0 30px 50px -20px rgba(0,0,0,0.8);
+        }
+        
+        .modal-content iframe {
+            width: 100%;
+            height: 600px;
+            border: none;
+            border-radius: 24px;
+        }
+        
+        .close-modal {
+            position: absolute;
+            top: -50px;
+            right: 0;
+            color: white;
+            font-size: 2rem;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+        
+        .close-modal:hover {
+            color: var(--gold);
+            transform: scale(1.1);
+        }
+
+        footer {
+            text-align: center;
+            padding: 3rem 2rem;
+            color: #94a3b8;
+            font-size: 0.8rem;
+            border-top: 1px solid rgba(255, 217, 102, 0.08);
+        }
+        
+        footer i {
+            color: var(--gold);
+            margin: 0 0.3rem;
+        }
+
+        @media (max-width: 1100px) {
+            .reels-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 1.2rem;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                padding: 0 1.2rem;
+            }
+            .hero-content h1 {
+                font-size: 2.8rem;
+            }
+            .hero-image img {
+                width: 220px;
+                height: 220px;
+            }
+            .section-title {
+                font-size: 2rem;
+            }
+            .reels-grid {
+                grid-template-columns: 1fr;
+            }
+            .modal-content iframe {
+                height: 400px;
+            }
+            .cinematic-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="bg-animation"></div>
+<div class="orb orb-1"></div>
+<div class="orb orb-2"></div>
+<div class="orb orb-3"></div>
+
+<div class="container">
+    <!-- HERO SECTION -->
+    <section class="section">
+        <div class="hero">
+            <div class="hero-content">
+                <div class="hero-badge">✦ PROFESSIONAL PORTFOLIO ✦</div>
+                <h1>Yoga <span>Srinivasan</span></h1>
+                <div class="hero-tagline">Cinematic Director • Video Editor • Food Photographer</div>
+                <div class="hero-description">
+                    Award-winning Cinematic Director & Photographer specializing in Industrial Videos, Food & Restaurant Photography, Fashion Campaigns, and Commercial Productions. 10+ years of visual storytelling excellence.
+                </div>
+                <div class="hero-stats">
+                    <div class="stat"><div class="stat-number">50+</div><div class="stat-label">Projects</div></div>
+                    <div class="stat"><div class="stat-number">12+</div><div class="stat-label">Awards</div></div>
+                    <div class="stat"><div class="stat-number">100+</div><div class="stat-label">Happy Clients</div></div>
+                </div>
+            </div>
+            <div class="hero-image">
+                <img src="image.png" alt="Yoga Srinivasan" onerror="this.src='https://placehold.co/400x400/1a1a2e/FFD966?text=Yoga+S'">
+            </div>
+        </div>
+    </section>
+
+    <!-- CINEMATIC VIDEOS SECTION (MP4 FILES) -->
+    <section class="section">
+        <div class="section-subtitle">CINEMATIC PRODUCTIONS</div>
+        <h2 class="section-title">🎬 Industrial & Cinematic Videos</h2>
+        <p style="color: #94a3b8; margin-bottom: 2rem;">Professional video works including cinematography, industrial shoots, and creative productions</p>
+        <div class="cinematic-grid" id="cinematicGrid"></div>
+    </section>
+
+    <!-- REELS SECTION - 4 VERTICAL COLUMNS -->
+    <section class="section">
+        <div class="reels-heading">
+            <div class="section-subtitle">SOCIAL CONTENT</div>
+            <h2 class="section-title">📱 Instagram & YouTube Reels</h2>
+            <p style="color: #94a3b8;">Click on any video to watch in fullscreen | 4 Vertical Columns</p>
+        </div>
+        <div class="reels-grid" id="reelsGrid"></div>
+    </section>
+
+    <!-- SKILLS & SERVICES SECTION -->
+    <section class="section">
+        <div class="section-subtitle">WHAT I OFFER</div>
+        <h2 class="section-title">Skills & Services</h2>
+        <div class="skills-grid">
+            <div class="skill-card"><i class="fas fa-film"></i><h4>Video Editing</h4><p>Premiere Pro, DaVinci Resolve</p></div>
+            <div class="skill-card"><i class="fas fa-video"></i><h4>Cinematorgraphy</h4><p>Industrial & Commercial</p></div>
+            <div class="skill-card"><i class="fas fa-magic"></i><h4>Motion Graphics</h4><p>After Effects, VFX</p></div>
+            <div class="skill-card"><i class="fas fa-utensils"></i><h4>Food Photography</h4><p>Restaurant & Product</p></div>
+            <div class="skill-card"><i class="fas fa-camera"></i><h4>Product Photography</h4><p>Studio & Commercial</p></div>
+            <div class="skill-card"><i class="fas fa-tshirt"></i><h4>Fashion Photography</h4><p>Editorial & Campaigns</p></div>
+        </div>
+    </section>
+
+    <!-- FOOD & RESTAURANT PHOTOGRAPHY SECTION -->
+    <section class="section">
+        <div class="section-subtitle">GASTRONOMY PORTFOLIO</div>
+        <h2 class="section-title">🍽️ Food & Restaurant Photography</h2>
+        <div class="food-grid" id="foodGrid"></div>
+    </section>
+
+    <!-- EXPERIENCE SECTION -->
+    <section class="section">
+        <div class="section-subtitle">MY JOURNEY</div>
+        <h2 class="section-title">Work Experience</h2>
+        <div class="exp-grid">
+            <div class="exp-card">
+                <i class="fas fa-video"></i>
+                <h3>Cinematic Director & Photographer</h3>
+                <div class="exp-date">Eshaa | 2021 – Present</div>
+                <p style="font-size: 0.85rem; line-height: 1.5;">Directed ad films, promotional videos, and fashion campaigns. Managed lighting, cinematography teams, and post-production.</p>
+            </div>
+            <div class="exp-card">
+                <i class="fas fa-graduation-cap"></i>
+                <h3>Visual Storyteller</h3>
+                <div class="exp-date">Shanmugha College of Engineering and Technology, Salem | 2018 – 2023</div>
+                <p style="font-size: 0.85rem; line-height: 1.5;">Led short film productions, documentary projects, and mentored aspiring cinematographers.</p>
+            </div>
+            <div class="exp-card">
+                <i class="fas fa-camera-retro"></i>
+                <h3>Freelance Photographer</h3>
+                <div class="exp-date">Independent Projects | 2015 – Present</div>
+                <p style="font-size: 0.85rem; line-height: 1.5;">Industrial Videos, Food & Restaurant, Product, Fashion, Wedding, and Corporate event photography.</p>
+            </div>
+        </div>
+        
+        <div style="margin-top: 2.5rem;">
+            <h4 style="color: var(--gold); margin-bottom: 1rem; font-size: 1.1rem;">📋 Selected Portfolio Projects</h4>
+            <div class="portfolio-list">
+                <span class="portfolio-badge">Industrial Cinematic Videos</span>
+                <span class="portfolio-badge">The Master Key - Bar & Kitchen</span>
+                <span class="portfolio-badge">Bistro De Paris</span>
+                <span class="portfolio-badge">Southern Spice Restaurant</span>
+                <span class="portfolio-badge">NetZero Moon Shots</span>
+                <span class="portfolio-badge">Eshaa Campaign Films</span>
+                <span class="portfolio-badge">Shanmugha College Documentaries</span>
+                <span class="portfolio-badge">Fashion Editorial Shoots</span>
+            </div>
+        </div>
+        
+        <div style="margin-top: 2rem; padding: 1.5rem; background: rgba(255, 217, 102, 0.05); border-radius: 16px; border-left: 3px solid var(--gold);">
+            <p style="font-size: 0.9rem;"><i class="fas fa-quote-left" style="color: var(--gold); margin-right: 0.5rem;"></i> All works in this portfolio are created by Yoga Srinivasan. Each project represents my commitment to visual excellence and storytelling.</p>
+        </div>
+    </section>
+
+    <footer>
+        <p><i class="fas fa-copyright"></i> 2025 Yoga Srinivasan | Cinematic Director, Video Editor & Photographer</p>
+        <p style="margin-top: 0.8rem;">
+            <i class="fas fa-envelope"></i> sriniofficial90@gmail.com &nbsp;&nbsp;|&nbsp;&nbsp;
+            <i class="fas fa-phone"></i> +91 95008 14946 &nbsp;&nbsp;|&nbsp;&nbsp;
+            <i class="fas fa-map-marker"></i> Chennai / Salem, India
+        </p>
+        <p style="margin-top: 0.8rem; font-size: 0.7rem;">Specializing in Industrial Videos, Food, Restaurant, Fashion & Commercial Photography</p>
+    </footer>
+</div>
+
+<!-- Video Modal -->
+<div id="videoModal" class="modal">
+    <div class="modal-content">
+        <span class="close-modal">&times;</span>
+        <div id="modalVideoContainer"></div>
+    </div>
+</div>
+
+<script>
+    // ========== CINEMATIC VIDEOS (YOUR MP4 FILES) ==========
+    const cinematicVideos = [
+        { title: "Cinematic Industrial Video - Project 1", description: "Professional cinematography & video production", file: "video1.mp4", type: "mp4" },
+        { title: "Creative Video Production - Project 2", description: "High-end visual storytelling", file: "video2.mp4", type: "mp4" },
+        { title: "Professional Video Work - Project 3", description: "Industrial & commercial video shoot", file: "video3.mp4", type: "mp4" }
+    ];
+    
+    // ========== REELS DATA - ORGANIZED INTO 4 VERTICAL COLUMNS ==========
+    const facePrepReels = [
+        { title: "Face Prep - Campus Workshop", url: "https://www.instagram.com/reel/DPTo4ttj4Nu/embed", type: "instagram" },
+        { title: "Face Prep - Student Success", url: "https://www.instagram.com/reel/DN748-QDeTt/embed", type: "instagram" },
+        { title: "Face Prep - Career Guidance", url: "https://www.instagram.com/reel/DNLHimShZ4A/embed", type: "instagram" }
+    ];
+    
+    const shanmughaReels = [
+        { title: "Shanmugha College - Cultural Fest", url: "https://www.instagram.com/reel/DM0FvUmIZMc/embed", type: "instagram" },
+        { title: "Shanmugha College - Tech Symposium", url: "https://www.instagram.com/reel/DMKqWUXNbMr/embed", type: "instagram" },
+        { title: "Shanmugha College - Annual Day", url: "https://www.instagram.com/reel/DL7aSTCNzHO/embed", type: "instagram" },
+        { title: "Shanmugha College - Sports Meet", url: "https://www.instagram.com/reel/DHdWoZANIIq/embed", type: "instagram" },
+        { title: "Shanmugha College - Short Film", url: "https://www.instagram.com/reel/DJEYRUYtEoF/embed", type: "instagram" }
+    ];
+    
+    const fashionReels = [
+        { title: "Eshaa - Campaign Film 1", url: "https://www.youtube.com/embed/dGoy8SXZ4Ec", type: "youtube" },
+        { title: "Eshaa - Campaign Film 2", url: "https://www.youtube.com/embed/R0imt1SA91U", type: "youtube" },
+        { title: "Premium Hoodie Collection", url: "https://www.instagram.com/reel/DPTo4ttj4Nu/embed", type: "instagram" }
+    ];
+    
+    const otherReels = [
+        { title: "Cinematic BTS - Behind Scenes", url: "https://www.instagram.com/reel/DPTo4ttj4Nu/embed", type: "instagram" },
+        { title: "Creative Montage - VFX", url: "https://www.instagram.com/reel/DN748-QDeTt/embed", type: "instagram" },
+        { title: "Motion Graphics Showreel", url: "https://www.instagram.com/reel/DNLHimShZ4A/embed", type: "instagram" }
+    ];
+    
+    // Render Cinematic Videos Section
+    const cinematicGrid = document.getElementById('cinematicGrid');
+    cinematicGrid.innerHTML = '';
+    cinematicVideos.forEach(video => {
+        const card = document.createElement('div');
+        card.className = 'cinematic-card';
+        card.setAttribute('data-video', video.file);
+        card.setAttribute('data-type', 'mp4');
+        card.innerHTML = `
+            <div class="cinematic-video">
+                <video src="${video.file}" preload="metadata"></video>
+                <div class="cinematic-play">
+                    <i class="fas fa-play-circle"></i>
+                </div>
+            </div>
+            <div class="cinematic-info">
+                <h3>${video.title}</h3>
+                <p>${video.description}</p>
+            </div>
+        `;
+        card.addEventListener('click', () => {
+            openVideo(video.file, 'mp4');
+        });
+        cinematicGrid.appendChild(card);
+    });
+    
+    // Render Reels Columns
+    function renderColumn(containerId, reelsArray, headerTitle, headerSub, headerClass) {
+        const container = document.getElementById(containerId);
+        if (!container) return;
+        
+        let html = `
+            <div class="reel-column">
+                <div class="column-header ${headerClass}">
+                    <h3>${headerTitle}</h3>
+                    <p>${headerSub}</p>
+                </div>
+        `;
+        
+        reelsArray.forEach((reel) => {
+            if (reel.type === 'youtube' || reel.type === 'instagram') {
+                html += `
+                    <div class="reel-item" data-url="${reel.url}" data-type="embed">
+                        <div class="reel-video">
+                            <iframe src="${reel.url}" frameborder="0" scrolling="no" allowtransparency="true" allow="encrypted-media"></iframe>
+                            <div class="play-overlay">
+                                <i class="fas fa-play-circle"></i>
+                            </div>
+                        </div>
+                        <div class="reel-title">${reel.title}</div>
+                    </div>
+                `;
+            }
+        });
+        
+        html += `</div>`;
+        container.innerHTML = html;
+    }
+    
+    const reelsGrid = document.getElementById('reelsGrid');
+    reelsGrid.innerHTML = `
+        <div id="col-faceprep"></div>
+        <div id="col-shanmugha"></div>
+        <div id="col-fashion"></div>
+        <div id="col-other"></div>
+    `;
+    
+    renderColumn('col-faceprep', facePrepReels, '🎓 FACE PREP CAMPUS', 'Education & Training Reels', 'header-faceprep');
+    renderColumn('col-shanmugha', shanmughaReels, '🏛️ SHANMUGHA COLLEGE', 'Engineering & Technology, Salem', 'header-shanmugha');
+    renderColumn('col-fashion', fashionReels, '👕 FASHION & TEXTILE', 'Hoodie / Product Campaigns', 'header-fashion');
+    renderColumn('col-other', otherReels, '🎬 OTHER CREATIONS', 'Additional Works & Montages', 'header-other');
+    
+    // ========== MODAL FOR VIDEO PLAYBACK ==========
+    const modal = document.getElementById('videoModal');
+    const modalVideoContainer = document.getElementById('modalVideoContainer');
+    const closeModal = document.querySelector('.close-modal');
+    
+    function openVideo(src, type) {
+        modalVideoContainer.innerHTML = '';
+        if (type === 'mp4') {
+            const videoElem = document.createElement('video');
+            videoElem.src = src;
+            videoElem.controls = true;
+            videoElem.autoplay = true;
+            videoElem.style.width = '100%';
+            videoElem.style.borderRadius = '24px';
+            modalVideoContainer.appendChild(videoElem);
+        } else {
+            const iframe = document.createElement('iframe');
+            iframe.src = src;
+            iframe.allow = "autoplay; encrypted-media; fullscreen";
+            iframe.allowFullscreen = true;
+            iframe.style.width = '100%';
+            iframe.style.height = '600px';
+            iframe.style.border = 'none';
+            iframe.style.borderRadius = '24px';
+            modalVideoContainer.appendChild(iframe);
+        }
+        modal.style.display = 'flex';
+        document.body.style.overflow = 'hidden';
+    }
+    
+    function closeVideoModal() {
+        modalVideoContainer.innerHTML = '';
+        modal.style.display = 'none';
+        document.body.style.overflow = 'auto';
+    }
+    
+    // Add click listeners to all reel items
+    document.addEventListener('click', function(e) {
+        const reelItem = e.target.closest('.reel-item');
+        if (reelItem) {
+            const videoUrl = reelItem.getAttribute('data-url');
+            if (videoUrl) {
+                openVideo(videoUrl, 'embed');
+            }
+        }
+    });
+    
+    closeModal.addEventListener('click', closeVideoModal);
+    modal.addEventListener('click', (e) => {
+        if (e.target === modal) closeVideoModal();
+    });
+    
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && modal.style.display === 'flex') {
+            closeVideoModal();
+        }
+    });
+    
+    // ========== FOOD & RESTAURANT GALLERY ==========
+    const foodItems = [
+        { title: "THE MASTER KEY", subtitle: "Bar & Kitchen - Unit of Flair Monsters", description: "Sing along Sunday | Tag your squad!", img: "image1.jpeg", location: "Near PVR Grand Mall, Velacherry, Chennai" },
+        { title: "LUNCH COMBO OFFER", subtitle: "Mocktail + Beer + Main Course", description: "Mocktail (or) Beer + Main course - ₹599", img: "image2.jpeg", location: "The Master Key, Velacherry, Chennai" },
+        { title: "BISTRO DE PARIS", subtitle: "Crafted for Connoisseurs", description: "GRASS FED TENDERLOIN", img: "image3.jpeg", location: "446 Chapel Street, South Yarra, Melbourne" },
+        { title: "NETZERO", subtitle: "MOON SHOTS", description: "SOLID TOOTHPASTE - FENNEL PUNCH", img: "image4.jpeg", location: "Premium Oral Care" },
+        { title: "SOUTHERN SPICE", subtitle: "Flavors of South Indian cuisine", description: "Dosa - Authentic South Indian", img: "image5.jpeg", location: "446 Chapel Street, South Yarra VIC 3141" },
+        { title: "SOUTHERN SPICE", subtitle: "Flavors of South Indian cuisine", description: "Prawn Curry & Malabar Fish Curry", img: "image6.jpeg", location: "446 Chapel Street, South Yarra VIC 3141" }
+    ];
+    
+    const foodGrid = document.getElementById('foodGrid');
+    foodGrid.innerHTML = '';
+    foodItems.forEach(item => {
+        const card = document.createElement('div');
+        card.className = 'food-card';
+        card.innerHTML = `
+            <img src="${item.img}" alt="${item.title}" onerror="this.src='https://placehold.co/600x400/1a1a2e/FFD966?text=${encodeURIComponent(item.title)}'">
+            <div class="food-info">
+                <h3>${item.title}</h3>
+                <p><i class="fas fa-location-dot" style="color: #FFD966; font-size: 0.6rem;"></i> ${item.location}</p>
+                <p style="font-size: 0.75rem; margin-top: 0.5rem;">${item.description}</p>
+            </div>
+        `;
+        card.addEventListener('click', () => {
+            window.open(item.img, '_blank');
+        });
+        foodGrid.appendChild(card);
+    });
+    
+    // GSAP Scroll Animations
+    gsap.registerPlugin(ScrollTrigger);
+    
+    gsap.utils.toArray('.cinematic-card, .reel-column, .skill-card, .exp-card, .food-card').forEach(el => {
+        gsap.from(el, {
+            scrollTrigger: {
+                trigger: el,
+                start: "top 85%",
+                toggleActions: "play none none reverse"
+            },
+            opacity: 0,
+            y: 50,
+            duration: 0.7,
+            ease: "power2.out"
+        });
+    });
+    
+    gsap.from('.hero-content', {
+        opacity: 0,
+        x: -50,
+        duration: 1,
+        ease: "power3.out"
+    });
+    
+    gsap.from('.hero-image', {
+        opacity: 0,
+        scale: 0.8,
+        duration: 1,
+        delay: 0.3,
+        ease: "back.out(0.4)"
+    });
+</script>
+</body>
+</html>
